@@ -1,6 +1,5 @@
 package com.example.taskmanager.entities;
 
-import io.swagger.v3.core.util.Json;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -13,7 +12,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "roles")
-public class Roles extends BaseEntity{
+public class Role extends BaseEntity{
 
     @Column(name="role_name")
     private String roleName;

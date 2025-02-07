@@ -1,7 +1,7 @@
 package com.example.taskmanager.entities;
 
-import com.example.taskmanager.enums.TaskPriority;
-import com.example.taskmanager.enums.TaskStatus;
+import com.example.taskmanager.enums.TaskPriorityEnum;
+import com.example.taskmanager.enums.TaskStatusEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name="tasks")
-public class Tasks extends BaseEntity{
+public class Task extends BaseEntity{
 
     @Column(name = "title")
     private String title;
@@ -20,10 +20,10 @@ public class Tasks extends BaseEntity{
     private String description;
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
-    private TaskStatus status;
+    private TaskStatusEnum status;
     @Column(name = "priority")
     @Enumerated(EnumType.STRING)
-    private TaskPriority priority;
+    private TaskPriorityEnum priority;
     @Column(name = "assigned_to")
     private Integer assignedTo;
     @Column(name = "estimated_time")

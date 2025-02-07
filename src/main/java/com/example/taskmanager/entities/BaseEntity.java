@@ -3,6 +3,8 @@ package com.example.taskmanager.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -25,12 +27,14 @@ public abstract class BaseEntity implements Serializable {
     @Column(name = "created_by")
     private Integer createdBy;
 
+    @CreatedDate
     @Column(name = "created_on")
     private LocalDateTime createdOn;
 
     @Column(name = "modified_by")
     private Integer modifiedBy;
 
+    @LastModifiedDate
     @Column(name = "modified_on")
     private LocalDateTime modifiedOn;
 

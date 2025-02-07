@@ -5,20 +5,22 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
 @Table(name="user_roles")
-public class UserRoles {
+public class UserRole extends BaseEntity{
+
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private Users user;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id")
-    private Roles role;
+    private Role role;
 
 }

@@ -1,6 +1,6 @@
 package com.example.taskmanager.enums;
 
-public enum TaskPriority {
+public enum TaskPriorityEnum {
     LOW,
     MEDIUM,
     HIGH

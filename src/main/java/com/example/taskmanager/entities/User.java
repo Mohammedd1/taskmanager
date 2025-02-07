@@ -3,14 +3,16 @@ package com.example.taskmanager.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Builder
 @Entity
 @Table(name="users")
-public class Users extends BaseEntity {
+@AllArgsConstructor
+@NoArgsConstructor
+public class User extends BaseEntity {
 
     @Column(name = "name")
     private String name;
@@ -18,7 +20,7 @@ public class Users extends BaseEntity {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "username")
+    @Column(name = "username", unique = true, nullable = false)
     private String username;
 
     @Column(name = "password")
